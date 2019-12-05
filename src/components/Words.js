@@ -13,11 +13,19 @@ const Words = (props) => {
 
 
   /******************************
+   * STYLES
+   ******************************/
+  const readerStyle = {
+    cursor: 'pointer'
+  };
+
+
+  /******************************
    * HANDLER METHODS
    ******************************/
   function handleHoverOverWord(event) {
     const selectedElement = event.target.id.split('-');
-    setFocusedWord(`${selectedElement[1] === 'transliterated' ? 'hebrew' : 'transliterated'}-${selectedElement[2]}-${selectedElement[3]}`);
+    setFocusedWord(`${selectedElement[2]}-${selectedElement[3]}`);
   }
 
 
@@ -29,7 +37,7 @@ const Words = (props) => {
     let words = [];
     for (let i = 0; i < sentence.words.length; i++) {
       const activeColor = mode === 'hebrew' ? 'text-info' : 'text-primary'
-      const elementClass = focusedWord === `${mode}-${index}-${i}` ? `${activeColor}` : '';
+      const elementClass = focusedWord === `${index}-${i}` ? `${activeColor}` : '';
       words.push(
         <span
           className={`text-left ${elementClass}`}
@@ -48,7 +56,7 @@ const Words = (props) => {
     let sentences = [];
     for (let i = 0; i < props.sentencesData.length; i++) {
       const sentence = (
-        <Row key={`words-${i}`}>
+        <Row className={'reader'} key={`words-${i}`}>
           <Col className={'text-right'}>{renderWords(props.sentencesData[i], i, 'hebrew')}</Col>
           <Col className={'text-left'}>{renderWords(props.sentencesData[i], i, 'transliterated')}</Col>
         </Row>

@@ -27,7 +27,7 @@ const Sentences = (props) => {
 
   function renderSentence (sentence, index) {
     return (
-      <Row key={index}>
+      <Row className={'reader'}  key={index}>
         <Col
           className={`text-right ${focusedElement === 'hebrew-'+index ? 'text-info' : ''}`}
           id={`sentence-hebrew-${index}`}

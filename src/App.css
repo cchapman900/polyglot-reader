@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.7em;
 }
 
 .App-logo {
@@ -36,4 +36,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.reader {
+  cursor: pointer;
 }

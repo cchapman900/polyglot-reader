@@ -19,20 +19,24 @@ const Reader = () => {
    ******************************/
 
   return (
-    <Container className={'m-5'}>
+    <div className={'m-5'}>
       <Row>
-        <Col>
-          <h3>Highlight by sentence</h3>
-          <Sentences sentencesData={sentencesData}/>
+        <Col sm={{span: 10, offset:1}}>
+          <Row>
+            <Col>
+              <h3>Highlight by sentence</h3>
+              <Sentences sentencesData={sentencesData}/>
+            </Col>
+          </Row>
+          <Row className={'mt-5'}>
+            <Col>
+              <h3>Highlight by word</h3>
+              <Words sentencesData={sentencesData}/>
+            </Col>
+          </Row>
         </Col>
       </Row>
-      <Row className={'mt-5'}>
-        <Col>
-          <h3>Highlight by word</h3>
-          <Words sentencesData={sentencesData}/>
-        </Col>
-      </Row>
-    </Container>
+    </div>
   )
 };
 
